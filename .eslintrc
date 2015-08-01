@@ -1,0 +1,22 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "strict": 0,
+        "quotes": [2, "single"],
+        "global-strict": 0,
+        "eol-last": 0,
+        "no-console": 0,
+        "no-undef": 0,
+        "new-cap": 0,
+        "camelcase": 0,
+        "no-redeclare": 0,
+        "no-unused-vars": 0
+    },
+    "globals": {
+        "Minilog": true,
+        "React": true
+    }
+}
