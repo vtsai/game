@@ -21,6 +21,10 @@ deploy:
     repo: vtsai/game
     tags: false
     branch: master
+deploy:
+  provider: heroku
+  api_key: "$HEROKU_AUTH_TOKEN"
+  app: game
 branches:
   except:
   - "/^*-v[0-9]/"
