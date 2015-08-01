@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- '0.12'
+script:
+- export GIT_TAG=$TRAVIS_BRANCH-v0.1.$TRAVIS_BUILD_NUMBER
+- npm run build
+- npm test
+- echo "GIT_TAG $GIT_TAG TRAVIS_BRANCH $TRAVIS_BRANCH"
+before_deploy:
+- git config --global user.email "builds@travis-ci.com"
+- git config --global user.name "Travis CI"
+- git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+- git push -q https://$GITHUB_AUTH_TOKEN@github.com/$TRAVIS_REPO_SLUG --tags
+- tar -C dist -czf game-${GIT_TAG}.tgz .
+deploy:
+  provider: releases
+  api_key: "$GITHUB_AUTH_TOKEN"
+  file: game-${GIT_TAG}.tgz
+  skip_cleanup: true
+  on:
+    repo: vtsai/game
+    tags: false
+    branch: master
+branches:
+  except:
+  - "/^*-v[0-9]/"
