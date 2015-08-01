@@ -30,6 +30,7 @@ rm ./dist/vendortemp.js && \
 
 cp ./node_modules/font-awesome/css/font-awesome.min.css ./dist && \
 cp -r ./node_modules/font-awesome/fonts ./dist && \
+cp -r ./images ./dist && \
 cp -r ./fonts ./dist && \
 cp index.html ./dist && \
 sed -i'.bak' 's/{{version}}/'$npm_package_version'/g' './dist/index.html' && \
