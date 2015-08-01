@@ -25,6 +25,7 @@ deploy:
   provider: heroku
   api_key: "$HEROKU_AUTH_TOKEN"
   app: game
+  strategy: git
 branches:
   except:
   - "/^*-v[0-9]/"
