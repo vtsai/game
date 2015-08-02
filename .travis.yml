@@ -1,3 +1,6 @@
+language: node_js
+node_js:
+- '0.12'
 script:
 - export GIT_TAG=$TRAVIS_BRANCH-v0.1.$TRAVIS_BUILD_NUMBER
 - npm run build
@@ -22,8 +25,6 @@ deploy:
   provider: heroku
   api_key: "$HEROKU_AUTH_TOKEN"
   app: pokemon-nfl
-  strategy: git
-  buildpack: https://github.com/abhishekmunie/heroku-buildpack-nginx.git
 branches:
   except:
   - "/^*-v[0-9]/"
