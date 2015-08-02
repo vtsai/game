@@ -1,1 +1,1 @@
-web: ls && pwd && node server.js
+web: node server.js
