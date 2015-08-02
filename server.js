@@ -8,7 +8,7 @@ server.use(express.static(__dirname + '/dist', { maxAge: oneDay }));
 
 server.get('/', function (req, res) {
 //  res.send(__dirname+'/mewzy');
-  res.sendFile(__dirname+'/dist/index.html');
+  res.sendFile(__dirname+'/index.html');
 });
  
 var port = process.env.PORT || 8080;
