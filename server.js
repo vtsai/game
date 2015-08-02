@@ -7,7 +7,7 @@ server.use(express.static(__dirname + '/dist', { maxAge: oneDay }));
 //server.use(express.static(__dirname + '/mewzy'));
 
 server.get('/', function (req, res) {
-  res.send(__dirname+'/');
+  res.send(__dirname+'/dist');
 //  res.sendFile(__dirname+'/index.html');
 });
  
