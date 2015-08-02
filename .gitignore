@@ -1,7 +1,6 @@
 npm-debug.log
 node_modules
 .DS_Store
-public
 public-test
 coverage
 .idea
