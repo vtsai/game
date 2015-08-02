@@ -1,1 +1,1 @@
-web: cd app && node server.js
+web: ls && pwd && node server.js
