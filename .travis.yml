@@ -11,7 +11,7 @@ before_deploy:
 - git config --global user.name "Travis CI"
 - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
 - git push -q https://$GITHUB_AUTH_TOKEN@github.com/$TRAVIS_REPO_SLUG --tags
-- tar -C app -czf game-${GIT_TAG}.tgz .
+- tar -C public -czf game-${GIT_TAG}.tgz .
 deploy:
   provider: releases
   api_key: "$GITHUB_AUTH_TOKEN"

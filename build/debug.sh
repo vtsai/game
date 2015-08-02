@@ -1,8 +1,8 @@
 #!/bin/bash
 echo 'building...'
 
-mkdir -p ./app && \
-lessc --clean-css='--keep-line-breaks' styles/app.less ./app/app$npm_package_version.css && \
+mkdir -p ./public && \
+lessc --clean-css='--keep-line-breaks' styles/app.less ./public/app$npm_package_version.css && \
 
 browserify src/index.js \
     -t [ babelify --modules common ] \
@@ -12,30 +12,30 @@ browserify src/index.js \
 uglifyjs bundle.js \
     -c warnings=false -m --screw-ie8 \
     --source-map bundle.js.map --in-source-map bundle2.js.map \
-    -o ./app/bundle$npm_package_version.js && \
-mv ./bundle.js.map ./app && \
+    -o ./public/bundle$npm_package_version.js && \
+mv ./bundle.js.map ./public && \
 rm ./bundle2.js.map && \
 rm ./bundle.js && \
 
 browserify -r superagent -r page -r babelify/polyfill \
-    -o ./app/vendortemp.js && \
-uglifyjs ./app/vendortemp.js \
+    -o ./public/vendortemp.js && \
+uglifyjs ./public/vendortemp.js \
     -c warnings=false -m --screw-ie8 \
-    -o ./app/vendortemp.js && \
-cat ./app/vendortemp.js \
+    -o ./public/vendortemp.js && \
+cat ./public/vendortemp.js \
     ./node_modules/moment/moment.js \
     ./node_modules/velocity-animate/velocity.js \
-    > ./app/vendor$npm_package_version.js && \
-rm ./app/vendortemp.js && \
+    > ./public/vendor$npm_package_version.js && \
+rm ./public/vendortemp.js && \
 
-cp ./node_modules/font-awesome/css/font-awesome.css ./app && \
-cp -r ./node_modules/font-awesome/fonts ./app && \
-cp -r ./images ./app && \
-cp -r ./fonts ./app && \
-cp index.html ./app && \
-cp server.js ./app && \
-sed -i'.bak' 's/{{version}}/'$npm_package_version'/g' './app/index.html' && \
-rm ./app/index.html.bak && \
+cp ./node_modules/font-awesome/css/font-awesome.css ./public && \
+cp -r ./node_modules/font-awesome/fonts ./public && \
+cp -r ./images ./public && \
+cp -r ./fonts ./public && \
+cp index.html ./public && \
+cp server.js ./public && \
+sed -i'.bak' 's/{{version}}/'$npm_package_version'/g' './public/index.html' && \
+rm ./public/index.html.bak && \
 STATUS=$?
 
 echo 'done in '$SECONDS' [sec]'
