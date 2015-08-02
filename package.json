@@ -13,7 +13,7 @@
     "watch": "sh ./build/watchjs.sh",
     "less": "sh ./build/less.sh",
     "test": "sh ./build/test.sh",
-    "start": "node server.js"
+    "start": "node app/server.js"
   },
   "repository": {
     "type": "git",
