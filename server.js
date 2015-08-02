@@ -9,7 +9,7 @@ server.use(express.static(__dirname + '/app'));
 
 server.get('/', function (req, res) {
 //  res.sendFile(__dirname+'/index.html');
-  res.redirect('/index.html');
+  res.redirect('/');
 });
  
 server.listen(port, function() {
