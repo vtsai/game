@@ -12,8 +12,7 @@
     "debug": "sh ./build/debug.sh",
     "watch": "sh ./build/watchjs.sh",
     "less": "sh ./build/less.sh",
-    "test": "sh ./build/test.sh",
-    "start": "node server.js"
+    "test": "sh ./build/test.sh"
   },
   "repository": {
     "type": "git",
