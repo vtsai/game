@@ -3,7 +3,6 @@ node_js:
 - '0.12'
 script:
 - export GIT_TAG=$TRAVIS_BRANCH-v0.1.$TRAVIS_BUILD_NUMBER
-- npm run build
 - npm test
 - echo "GIT_TAG $GIT_TAG TRAVIS_BRANCH $TRAVIS_BRANCH"
 before_deploy:
@@ -25,9 +24,6 @@ deploy:
   provider: heroku
   api_key: "$HEROKU_AUTH_TOKEN"
   app: pokemon-nfl
-  run: 
-    - "npm run build"
-    - restart
 branches:
   except:
   - "/^*-v[0-9]/"

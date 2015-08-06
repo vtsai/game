@@ -32,8 +32,8 @@ cp ./node_modules/font-awesome/css/font-awesome.min.css ./public && \
 cp -r ./node_modules/font-awesome/fonts ./public && \
 cp -r ./images ./public && \
 cp -r ./fonts ./public && \
-cp index.html ./public && \
-cp server.js ./public && \
+cp ./index.html ./public && \
+cp ./server.js ./public && \
 sed -i'.bak' 's/{{version}}/'$npm_package_version'/g' './public/index.html' && \
 rm ./public/index.html.bak && \
 STATUS=$?
