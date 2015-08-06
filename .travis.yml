@@ -25,6 +25,7 @@ deploy:
   provider: heroku
   api_key: "$HEROKU_AUTH_TOKEN"
   app: pokemon-nfl
+  run: "npm run build"
 branches:
   except:
   - "/^*-v[0-9]/"
