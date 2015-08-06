@@ -8,8 +8,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "postinstall": "npm run runbuild",
-    "runbuild": "sh ./build/build.sh",
+    "postinstall": "sh ./build/build.sh",
+    "build": "sh ./build/build.sh",
     "debug": "sh ./build/debug.sh",
     "watch": "sh ./build/watchjs.sh",
     "less": "sh ./build/less.sh",
