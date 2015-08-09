@@ -17,13 +17,14 @@ mv ./bundle.js.map ./public && \
 rm ./bundle2.js.map && \
 rm ./bundle.js && \
 
-browserify -r superagent -r page -r babelify/polyfill \
+browserify -r craftyjs -r superagent -r page -r babelify/polyfill \
     -o ./public/vendortemp.js && \
 uglifyjs ./public/vendortemp.js \
     -c warnings=false -m --screw-ie8 \
     -o ./public/vendortemp.js && \
 cat ./public/vendortemp.js \
     ./node_modules/moment/moment.js \
+    ./node_modules/jquery/dist/jquery.js \
     ./node_modules/velocity-animate/velocity.js \
     > ./public/vendor$npm_package_version.js && \
 rm ./public/vendortemp.js && \
