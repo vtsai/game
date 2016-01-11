@@ -6,7 +6,7 @@ lessc --clean-css='--keep-line-breaks' styles/app.less ./public/app$npm_package_
 
 browserify src/index.js \
     -t [ babelify --modules common ] \
-    -x babelify/polyfill -x superagent -x page --debug \
+    -x babelify/polyfill -x superagent -x page -x react --debug \
     | exorcist ./bundle2.js.map \
     > ./bundle.js && \
 uglifyjs bundle.js \
@@ -17,7 +17,7 @@ mv ./bundle.js.map ./public && \
 rm ./bundle2.js.map && \
 rm ./bundle.js && \
 
-browserify -r craftyjs -r superagent -r page -r babelify/polyfill \
+browserify -r craftyjs -r superagent -r page -r -r react babelify/polyfill \
     -o ./public/vendortemp.js && \
 uglifyjs ./public/vendortemp.js \
     -c warnings=false -m --screw-ie8 \

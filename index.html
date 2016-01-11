@@ -11,7 +11,26 @@
 </head>
 
 <body>
-    <div id='app-body'></div>
+   <div id='app-title'>Pokemon-NFL</div> 
+    <div id='app-body'>
+        <form class="login-form">
+            <table>
+                <tr>
+                    <td><div class="title">Character name:</div></td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td><div class="title">Password:</div></td>
+                    <td><input type="password"/></td>
+                </tr>
+            </table>
+            <select>
+                <option>Ash</option>
+                <option>Dawn</option>
+            </select>
+            <a href="#" onClick="alert('You are logged in'); return;"><img src="images/favicon.png"/></a>
+        </form>
+    </div>
     <script type='text/javascript' src='bundle{{version}}.js'></script>
 </body>
 </html>
