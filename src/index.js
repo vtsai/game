@@ -1,7 +1,11 @@
 'use strict';
 
-import 'craftyjs';
-import 'react';
+import 'babelify/polyfill';
+import Crafty from 'craftyjs';
+import React from 'react';
+import App from './app';
+import SetupRouterAction from './SetupRouterAction';
+
 /*
 window.onload = function() {
     Crafty.init();
@@ -12,3 +16,6 @@ window.onload = function() {
         .fourway(3);
 };
 */
+
+SetupRouterAction();
+React.render(<App/>, document.getElementById('app-body'));

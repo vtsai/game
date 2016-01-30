@@ -17,7 +17,7 @@ mv ./bundle.js.map ./public && \
 rm ./bundle2.js.map && \
 rm ./bundle.js && \
 
-browserify -r craftyjs -r superagent -r page -r -r react babelify/polyfill \
+browserify -r craftyjs -r superagent -r page -r react -r babelify/polyfill \
     -o ./public/vendortemp.js && \
 uglifyjs ./public/vendortemp.js \
     -c warnings=false -m --screw-ie8 \

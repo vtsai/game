@@ -1,0 +1,25 @@
+// Border-Box
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+}
+
+// iOS text size adjust
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+// remove default margins
+body, p, input, button {
+    margin: 0;
+}
+
+// IE SVG overflow bug
+svg:not(:root) {
+    overflow: hidden;
+}
