@@ -4,7 +4,7 @@ import 'babelify/polyfill';
 import Crafty from 'craftyjs';
 import React from 'react';
 import App from './app';
-import SetupRouterAction from './SetupRouterAction';
+import SetupRouterAction from './setupRouterAction';
 
 /*
 window.onload = function() {
